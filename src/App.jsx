@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './pages/Home'
+import "./App.css";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import MeetingRoom from "./pages/MeetingRoom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
-    <>
-      <Home/>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/meeting-room" element={<MeetingRoom />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
